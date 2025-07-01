@@ -1,0 +1,40 @@
+{
+  "name": "react-web-starter",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "prepare": "husky install",
+    "user:dev": "turbo run --filter user-portal dev",
+    "wz:dev": "turbo run --filter wz-portal dev",
+    "admin:dev": "turbo run --filter admin-portal dev",
+    "all:dev": "turbo run dev --filter *portal",
+    "user:preview": "turbo run --filter user-portal preview",
+    "admin:preview": "turbo run --filter admin-portal preview",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "bitbucket:env:generate": "turbo run bitbucket:env:generate",
+    "generate-api": "turbo run generate-api --filter shared",
+    "rebase": "bash ./dev/script/rebase.sh",
+    "dev:start": "docker compose up -d --build && npm run dev:logs",
+    "dev:logs": "docker compose logs -f",
+    "dev:stop": "docker compose down --remove-orphans",
+    "dev:restart": "npm run dev:stop && npm run dev:start"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "eslint": "^8.55.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "husky": "^9.0.10",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.2.4",
+    "prettier-plugin-tailwindcss": "^0.5.11",
+    "pretty-quick": "^4.0.0",
+    "turbo": "^1.12.5",
+    "typescript": "^5.2.2"
+  }
+}
