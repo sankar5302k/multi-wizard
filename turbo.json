@@ -1,0 +1,25 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "pipeline": {
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "build": {
+      "cache": false
+    },
+    "lint": {
+      "cache": false
+    },
+    "preview": {
+      "cache": false,
+      "persistent": true
+    },
+    "bitbucket:env:generate": {
+      "cache": false
+    },
+    "generate-api": {
+      "cache": false
+    }
+  }
+}
